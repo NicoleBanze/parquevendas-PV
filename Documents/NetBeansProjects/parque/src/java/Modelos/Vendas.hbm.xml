@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 28/mai/2023 21:10:22 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Modelos.Vendas" table="vendas" catalog="parque_vendas" optimistic-lock="version">
+        <id name="codigoVenda" type="int">
+            <column name="codigo_venda" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="cliente" class="Modelos.Cliente" fetch="select">
+            <column name="cliente_cod" not-null="true" />
+        </many-to-one>
+        <many-to-one name="funcionario" class="Modelos.Funcionario" fetch="select">
+            <column name="funcionario_cod" not-null="true" />
+        </many-to-one>
+        <many-to-one name="stock" class="Modelos.Stock" fetch="select">
+            <column name="stock_cod" not-null="true" />
+        </many-to-one>
+        <property name="quantidade" type="int">
+            <column name="quantidade" not-null="true" />
+        </property>
+        <property name="precoVenda" type="big_decimal">
+            <column name="preco_venda" precision="40" scale="0" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>
