@@ -29,9 +29,10 @@ public class ClienteBean {
         return cliente;
     }
 
-    public void setCurso(Cliente cliente) {
+    public void setCliente(Cliente cliente) {
         this.cliente = cliente;
     }
+    
 
     public List<Cliente> getClientes() {
         ImplementarClienteDAO dao=new ImplementarClienteDAO();
@@ -39,7 +40,7 @@ public class ClienteBean {
         return clientes;
     }
 
-    public void setCursos(List<Cliente> cursos) {
+    public void setCliente(List<Cliente> cursos) {
         this.clientes = clientes;
     }
     

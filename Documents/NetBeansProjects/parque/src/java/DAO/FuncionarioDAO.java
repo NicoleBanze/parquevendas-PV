@@ -4,19 +4,19 @@
  * and open the template in the editor.
  */
 package DAO;
- 
-    import Modelos.Funcionario;
-    import java.util.List;
-    import org.hibernate.HibernateException;
-    import org.hibernate.Query;
-    import org.hibernate.Session;
-    import persist.HibernateUtil;
+
+import Modelos.Funcionario;
+import java.util.List;
+import org.hibernate.HibernateException;
+import org.hibernate.Query;
+import org.hibernate.Session;
+import persist.HibernateUtil;
 
 /**
  *
  * @author 25885
  */
-public class ImplementarFuncionarioDAO {
+public class FuncionarioDAO {
     public void inserirFuncionario(Funcionario funcionario) {
         Session sessao=null;
         try{
@@ -75,7 +75,7 @@ public class ImplementarFuncionarioDAO {
             sessao=HibernateUtil.getSessionFactory().openSession();
             Query query=sessao.createQuery("from Funcionario");
             listaFuncionarios=(List<Funcionario>)query.list();
-
+            
         } catch (HibernateException e) {
             System.out.println(e.getMessage());
         }
