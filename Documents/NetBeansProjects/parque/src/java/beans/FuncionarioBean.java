@@ -5,11 +5,67 @@
  */
 package beans;
 
+import DAO.ImplementarFuncionarioDAO;
+import Modelos.Funcionario;
+import java.util.List;
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
+
 
 /**
  *
  * @author 25885
  */
 public class FuncionarioBean {
+    private Funcionario funcionario;
+    private List<Funcionario> funcionarios;
+
+    public Funcionario getFuncionario() {
+        return funcionario;
+    }
+
+    public void setFuncionario(Funcionario funcionario) {
+        this.funcionario = funcionario;
+    }
+
+    public List<Funcionario> getFuncionarios() {
+        ImplementarFuncionarioDAO dao=new ImplementarFuncionarioDAO();
+        funcionarios=dao.apresentarFuncionario();
+        return funcionarios;
+    }
+
+    public void setFuncionarios(List<Funcionario> cursos) {
+        this.funcionarios = funcionarios;
+    }
     
+    /**
+     * Creates a new instance of CursoBean
+     */
+    public FuncionarioBean() {
+        funcionario=new Funcionario();
+        
+    }
+
+    public void inserir(){
+        ImplementarFuncionarioDAO dao=new ImplementarFuncionarioDAO();
+        dao.inserirFuncionario(funcionario);
+        funcionario=new Funcionario();
+        addMessage("Funcionario inserido com sucesso");
+    } 
+    public void modificar(){
+        ImplementarFuncionarioDAO dao=new ImplementarFuncionarioDAO();
+        dao.actualizarFuncionario(funcionario);
+        funcionario=new Funcionario();
+        addMessage("Funcionario modificado com sucesso");
+    }
+        public void eliminar(){
+        ImplementarFuncionarioDAO dao=new ImplementarFuncionarioDAO();
+        dao.apagarFuncionario(funcionario);
+        funcionario=new Funcionario();
+        addMessage("Funcionario eliminado com sucesso");
+    }
+    public void addMessage(String summary){
+        FacesMessage messagem=new FacesMessage(FacesMessage.SEVERITY_INFO, summary, null);
+        FacesContext.getCurrentInstance().addMessage(null, messagem);
+    }
 }
