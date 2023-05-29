@@ -5,12 +5,17 @@
  */
 package beans;
 
+import DAO.FuncionarioDAO;
 import DAO.ImplementarFuncionarioDAO;
-import Modelos.Funcionario;
 import java.util.List;
 import javax.faces.application.FacesMessage;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
+import Modelos.Funcionario;
 
+@ManagedBean
+@ViewScoped
 
 /**
  *
@@ -34,7 +39,7 @@ public class FuncionarioBean {
         return funcionarios;
     }
 
-    public void setFuncionarios(List<Funcionario> cursos) {
+    public void setFuncionarios(List<Funcionario> funcionarios) {
         this.funcionarios = funcionarios;
     }
     
