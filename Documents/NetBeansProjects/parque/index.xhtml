@@ -1,0 +1,106 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html  xmlns="http://www.w3.org/1999/xhtml"
+       xmlns:h="http://java.sun.com/jsf/html"
+       xmlns:f="http://java.sun.com/jsf/core"
+       xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Facelet Title</title>
+        <img class="logo" alt="user header" src="img/carro4.jpeg"/>
+
+        <h:outputStylesheet library="css" name="estilo.css"></h:outputStylesheet>
+        <h1> Alpha Cars LDA</h1>
+
+        <h2><i>Garantindo 100% de qualidade do seu automovel! </i></h2>
+        <h:outputStylesheet name="css/jsfcrud.css"/>
+    </h:head>
+   
+    <h:body>
+
+        <style>
+
+            .logo{
+                height: 100px;
+                width: 150px;
+            }
+
+            .logox{
+                height: 100px;
+                width: 150px;
+                margin-left: 250px;
+            }
+            .card{
+                height: 570px;
+                width: 495px;
+                position: absolute;
+
+            }
+            body{
+                background-color: rosybrown;
+                text-align: center;
+            }
+
+            .card2{
+                margin-left: 530px;
+                height: 570px;
+                width: 500px;
+                position: absolute;
+            }
+            .card3{
+                margin-left: 1060px;
+                height: 570px;
+                width: 500px;
+            }
+            .card4{
+                height: 570px;
+                width: 500px;
+                position: absolute;
+                margin-top: 100px;
+            }
+
+            .card6{
+                margin-top: 100px;
+                margin-left: 530px;
+                height: 570px;
+                width: 500px;
+                position: absolute;
+            }
+            .card7{
+                height: 570px;
+                margin-left: 1060px;
+                position: absolute;
+                margin-top: 100px;
+            }
+            .card8{
+                height: 570px;
+                width: 500px;
+                margin-top: 700px;
+            }
+            .card9{
+                margin-top: 10px;
+                margin-left: 530px;
+                height: 500px;
+                width: 500px;
+                position: absolute;
+            } 
+        </style>
+        
+
+        <img  alt="user header" src="img/carro1.jpeg"/> <br /> <br />
+        <h2><i>Cadastre-se aqui para pagamento e Gestão de Dados</i></h2>
+        <br />
+        <h:link outcome="welcomePrimefaces" value="Primefaces welcome page" />
+        <br />
+        <h:link outcome="/cliente/List" value="Show All Cliente Items"/>
+        <br />
+        <h:link outcome="/funcionario/List" value="Show All Funcionario Items"/>
+        <br />
+        <h:link outcome="/stock/List" value="Show All Stock Items"/>
+        <br />
+        <h:link outcome="/vendas/List" value="Show All Vendas Items"/>
+        <br />
+        <h:link outcome="/viatura/List" value="Show All Viatura Items"/>
+    </h:body>
+
+</html>
+
